@@ -1,6 +1,7 @@
 # usage
-image="archlinux:latest"
-container_name="arch.test.noinit"
+```
+image="fedora:latest"
+container_name="fedora.test0.0"
 
 mkdir -p "${HOME}/distrobox/${container_name}"
 
@@ -11,5 +12,5 @@ distrobox create \
 --init-hooks 'umount /var/lib/flatpak' \
 --init
 
-
 distrobox create 
+```
