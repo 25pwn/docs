@@ -1,7 +1,7 @@
 # usage
 ```
-image="fedora:latest"
-container_name="fedora.test0.0"
+image="fedora:37"
+container_name="fedora.test1.0"
 
 mkdir -p "${HOME}/distrobox/${container_name}"
 
