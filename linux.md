@@ -1,2 +1,12 @@
-Linux on Apple devices
-[t2linux]()
+## Recommended distros
+- [Arch Linux](https://archlinux.org/)
+- [Fedora](https://getfedora.org/)
+- [Gentoo](https://www.gentoo.org/)
+- [NixOS](https://nixos.org/)
+- [Alpine Linux](https://www.alpinelinux.org/)
+## Recommended tools
+- []
+
+## Linux on Apple devices
+- [t2linux](https://wiki.t2linux.org/)
+- [asahi linux](https://asahilinux.org/2022/03/asahi-linux-alpha-release/)
