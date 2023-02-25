@@ -1,6 +1,6 @@
 # NixOS
 ---
-tags: linux-platform containers sandboxing
+tags: linux-platform containers linux-distro
 ---
 
 [Manual](https://nixos.org/manual/nixos/stable/)

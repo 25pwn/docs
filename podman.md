@@ -1,8 +1,12 @@
 # Podman
 ---
-tags: linux-platform containers sandboxing
+tags: linux-platform containers
 ---
-# Systemd
+
+## GUI management
+[Pods](https://github.com/marhkb/pods)
+
+## Systemd
 [How to run systemd in a container](https://developers.redhat.com/blog/2019/04/24/how-to-run-systemd-in-a-container)
 
 fedora-systemd-dockerfile:

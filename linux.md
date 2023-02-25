@@ -1,6 +1,6 @@
 # Linux
 ---
-tags: linux-platform containers sandboxing
+tags: linux-platform
 ---
 ## Recommended distros
 - [Arch Linux](https://archlinux.org/)

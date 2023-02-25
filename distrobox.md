@@ -1,6 +1,6 @@
 # Distrobox
 ---
-tags: linux-platform containers sandboxing
+tags: linux-platform containers
 ---
 ```
 image="archlinux:latest"

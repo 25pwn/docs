@@ -1,6 +1,6 @@
 # LXD
 ---
-tags: linux-platform containers sandboxing
+tags: linux-platform containers
 ---
 ## Installation
 	# sources:
