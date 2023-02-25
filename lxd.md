@@ -2,6 +2,7 @@
 ## Installation
 	# sources:
 	# https://wiki.archlinux.org/title/Linux_Containers
+	# https://wiki.archlinux.org/title/LXD
 	# https://linuxcontainers.org/lxd/getting-started-cli/
 	# https://linuxcontainers.org/lxc/getting-started/
 
@@ -16,21 +17,55 @@
 
 	echo "Running lxd init"
 	echo '' | sudo lxd init --preseed
-	
-## Usage
-sudo lxc launch images:archlinux test0
-sudo lxc exec test0 -- bash
-sudo lxc exec test0 -- su - fedora
-sudo lxc console test0
-sudo lxc delete --force test0
-lxc image list images:ubuntu
-sudo lxc image export ubuntu:20.04
 
+## Usage
+List image servers
+```
+lxc remote list
+```
+List of image servers
+```
+images
+```
+Search for images
+
+```
+lxc image list ${REMOTE}:${SEARCH_TERM}
+```
+List of images
+```
+archlinux: archlinux
+fedora rawhide: fedora/Rawhide
+```
+Create and start container
+```
+sudo lxc launch ${REMOTE}:${IMAGE} ${NAME}
+```
+Execute commands
+```
+sudo lxc exec ${NAME} -- ${COMMAND}
+```
+Open console
+```
+sudo lxc console ${NAME}
+```
+Delete container
+```
+sudo lxc delete --force ${NAME}
+```
+### Misc
+Export image
+```
+sudo lxc image export ${REMOTE}:${IMAGE}
+```
+Reset LXD
+```
 rm -rf snap/lxd
 sudo rm -rf /root/snap/lxd
 sudo rm -rf /var/lib/lxd
 sudo rm -rf /var/lib/lxc
 sudo ip link delete lxdbr0
+```
 
 sudo mkdir -p /etc/systemd/system/user@.service.d
 cat <<EOF | sudo tee /etc/systemd/system/user@.service.d/delegate.conf
