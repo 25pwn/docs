@@ -18,7 +18,36 @@
 	sudo lxc profile set default boot.autostart=false
 
 	echo "Running lxd init"
-	echo '' | sudo lxd init --preseed
+	echo 'config:
+	images.auto_update_interval: "0"
+	networks:
+	- config:
+		ipv4.address: auto
+		ipv6.address: auto
+	description: ""
+	name: lxdbr0
+	type: ""
+	project: default
+	storage_pools:
+	- config:
+		source: /var/lib/lxd/storage-pools/default
+	description: ""
+	name: default
+	driver: btrfs
+	profiles:
+	description: ""
+	devices:
+		eth0:
+		name: eth0
+		network: lxdbr0
+		type: nic
+		root:
+		path: /
+		pool: default
+		type: disk
+	name: default
+	projects: []
+	cluster: null' | sudo lxd init --preseed
 
 ## Usage
 List image servers
