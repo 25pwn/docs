@@ -1,10 +1,12 @@
 # LXD
 ## Installation
 	# sources:
+	# https://linuxcontainers.org/lxd/getting-started-cli/
+	# https://linuxcontainers.org/lxd/advanced-guide/
 	# https://wiki.archlinux.org/title/Linux_Containers
 	# https://wiki.archlinux.org/title/LXD
-	# https://linuxcontainers.org/lxd/getting-started-cli/
-	# https://linuxcontainers.org/lxc/getting-started/
+	
+	# https://www.cyberciti.biz/faq/how-to-install-lxd-container-hypervisor-on-ubuntu-16-04-lts-server/
 
 	# this requires snap:
 	# https://snapcraft.io/docs/installing-snapd
@@ -40,6 +42,16 @@ fedora rawhide: fedora/Rawhide
 Create and start container
 ```
 sudo lxc launch ${REMOTE}:${IMAGE} ${NAME}
+```
+Start/stop/restart container
+```
+sudo lxc start ${NAME}
+sudo lxc stop ${NAME}
+sudo lxc restart ${NAME}
+```
+Container info
+```
+sudo lxc info ${NAME}
 ```
 Execute commands
 ```
