@@ -1,5 +1,7 @@
+---
+tags: touhou meme
+---
 # Bad Apple!!
----
-Tags: touhou meme
----
+
+## Parodies
 [C++ errors](https://youtu.be/Ome1vIXt4xk)

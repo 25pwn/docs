@@ -1,7 +1,7 @@
+---
+tags: linux-distro sandboxing package-manager 
+---
 # Flatpak
----
-tags: linux-platform sandboxing package-manager linux-distro
----
 ## Apps
 | Name | Application ID | Description | Remote |
 | --- | --- | --- | --- |

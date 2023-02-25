@@ -1,7 +1,7 @@
-# Linux
 ---
 tags: linux-platform
 ---
+# Linux
 ## Recommended distros
 - [Arch Linux](https://archlinux.org/)
 - [Fedora](https://getfedora.org/)

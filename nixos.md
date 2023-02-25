@@ -1,7 +1,7 @@
+---
+tags: linux-distro
+---
 # NixOS
----
-tags: linux-platform containers linux-distro
----
 
 [Manual](https://nixos.org/manual/nixos/stable/)
 
