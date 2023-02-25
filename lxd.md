@@ -1,4 +1,7 @@
 # LXD
+---
+tags: linux-platform containers sandboxing
+---
 ## Installation
 	# sources:
 	# https://linuxcontainers.org/lxd/getting-started-cli/

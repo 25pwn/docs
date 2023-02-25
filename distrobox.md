@@ -1,4 +1,7 @@
-# usage
+# Distrobox
+---
+tags: linux-platform containers sandboxing
+---
 ```
 image="archlinux:latest"
 container_name="a0"

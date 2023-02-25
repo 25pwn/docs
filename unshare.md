@@ -1,3 +1,7 @@
+# unshare
+---
+tags: linux-platform containers sandboxing
+---
 unshare \
 --mount --uts --ipc --net --pid --user --cgroup --time \
 --fork \

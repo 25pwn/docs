@@ -1,3 +1,8 @@
+# NixOS
+---
+tags: linux-platform containers sandboxing
+---
+
 [Manual](https://nixos.org/manual/nixos/stable/)
 
 [Learn](https://nixos.org/learn.html)
