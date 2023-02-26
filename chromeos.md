@@ -1,5 +1,5 @@
 ---
-tags: linux-distro
+tags: linux-distro immutable
 ---
 # ChromeOS
 ## Virtualization

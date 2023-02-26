@@ -11,6 +11,5 @@ tags: linux-platform os unix
 ## Recommended tools
 - [distrobox](https://github.com/89luca89/distrobox)
 
-## Linux on Apple devices
-- [t2linux](https://wiki.t2linux.org/)
-- [asahi linux](https://asahilinux.org/2022/03/asahi-linux-alpha-release/)
+## Gaming
+[ProtonDB](https://www.protondb.com/): Game compatibility
