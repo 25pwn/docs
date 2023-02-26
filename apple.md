@@ -7,6 +7,8 @@ tags: brand
 
 [MOXiI](http://newosxbook.com/1stEdIsFree.html)
 
+[Darling](https://github.com/darlinghq/darling): Darwin compatibility layer for linux
+
 ## Linux on Apple devices
 - [t2linux](https://wiki.t2linux.org/)
 - [asahi linux](https://asahilinux.org/2022/03/asahi-linux-alpha-release/)
