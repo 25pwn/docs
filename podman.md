@@ -2,6 +2,30 @@
 tags: linux-platform containers
 ---
 # Podman
+## Usage
+sources: https://wiki.archlinux.org/title/Podman
+
+Search for images
+```
+podman search ${REGISTRY}/${SEARCH_TERM}
+```
+List of registries
+```
+docker.io: docker
+registry.fedoraproject.org: fedora
+```
+Pull image
+```
+podman pull ${REGISTRY}/${SEARCH_TERM}
+```
+Create container
+```
+podman create
+```
+Create and start container
+```
+podman run 
+```
 
 ## GUI management
 [Pods](https://github.com/marhkb/pods)
