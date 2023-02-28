@@ -3,11 +3,15 @@ tags: linux-platform containers
 ---
 # LXD
 ## Installation
-	# sources:
-	# https://linuxcontainers.org/lxd/getting-started-cli/
-	# https://linuxcontainers.org/lxd/advanced-guide/
-	# https://wiki.archlinux.org/title/Linux_Containers
-	# https://wiki.archlinux.org/title/LXD
+sources:
+
+https://linuxcontainers.org/lxd/getting-started-cli/
+
+https://linuxcontainers.org/lxd/advanced-guide/
+
+https://wiki.archlinux.org/title/Linux_Containers
+
+https://wiki.archlinux.org/title/LXD
 	
 	# https://www.cyberciti.biz/faq/how-to-install-lxd-container-hypervisor-on-ubuntu-16-04-lts-server/
 
