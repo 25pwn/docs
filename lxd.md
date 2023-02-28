@@ -9,10 +9,50 @@ https://linuxcontainers.org/lxd/getting-started-cli/
 
 https://linuxcontainers.org/lxd/advanced-guide/
 
+https://linuxcontainers.org/lxd/docs/master/getting_started/
+
 https://wiki.archlinux.org/title/Linux_Containers
 
 https://wiki.archlinux.org/title/LXD
 	
+### Configuration
+```
+sudo systemctl enable --now lxd.service
+sudo lxc profile set default boot.autostart=false
+
+echo 'config:
+  images.auto_update_interval: "0"
+networks:
+- config:
+    ipv4.address: auto
+    ipv6.address: auto
+  description: ""
+  name: lxdbr0
+  type: ""
+  project: default
+storage_pools:
+- config:
+    source: /var/lib/lxd/storage-pools/default
+  description: ""
+  name: default
+  driver: btrfs
+profiles:
+- config: {}
+  description: ""
+  devices:
+    eth0:
+      name: eth0
+      network: lxdbr0
+      type: nic
+    root:
+      path: /
+      pool: default
+      type: disk
+  name: default
+projects: []
+cluster: null' | sudo lxd init --preseed
+```
+
 	# https://www.cyberciti.biz/faq/how-to-install-lxd-container-hypervisor-on-ubuntu-16-04-lts-server/
 
 	# this requires snap:
@@ -20,41 +60,6 @@ https://wiki.archlinux.org/title/LXD
 
 	echo "Installing LXD"
 	sudo snap install lxd
-
-	sudo systemctl enable --now lxd.service
-	sudo lxc profile set default boot.autostart=false
-
-	echo "Running lxd init"
-	echo 'config:
-	images.auto_update_interval: "0"
-	networks:
-	- config:
-		ipv4.address: auto
-		ipv6.address: auto
-	description: ""
-	name: lxdbr0
-	type: ""
-	project: default
-	storage_pools:
-	- config:
-		source: /var/lib/lxd/storage-pools/default
-	description: ""
-	name: default
-	driver: btrfs
-	profiles:
-	description: ""
-	devices:
-		eth0:
-		name: eth0
-		network: lxdbr0
-		type: nic
-		root:
-		path: /
-		pool: default
-		type: disk
-	name: default
-	projects: []
-	cluster: null' | sudo lxd init --preseed
 
 ## Usage
 List image servers
