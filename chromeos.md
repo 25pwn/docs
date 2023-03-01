@@ -7,7 +7,7 @@ Note: Chrome OS devices' keys between `ESC` and `LOCK` are just function keys wi
 
 ## [Developer Mode](https://chromium.googlesource.com/chromiumos/docs/+/HEAD/developer_mode.md)
 
-Developer Mode allows privleged code execution which is not permitted on stock Chrome OS. Enter Recovery Mode(`ESC+F2+POWER`) and press `CTRL+D` to enable Developer Mode(Note that this resets your state partition(your local data)). When booting, press `CTRL+D` to skip the 30-second timer. After booting, enter VT-2(`CTRL+ALT+F2`, `CTRL+ALT+F1` to exit). Initially, you can log in as `root` or `chronos`(initially with access to passwordless sudo) without any passwords. Run `chromeos-setdevpasswd`(note that `passwd` does not work) to set the password(and sudo password) for `chronos`(this will also disable logging in as root), which you can use in `crosh`(CTRL+ALT+T). To use bash inside `crosh`, run `shell`.
+Developer Mode allows privlieged code execution which is not permitted on stock Chrome OS. Enter Recovery Mode(`ESC+F2+POWER`) and press `CTRL+D` to enable Developer Mode(Note that this resets your state partition(your local data)). When booting, press `CTRL+D` to skip the 30-second timer. After booting, enter VT-2(`CTRL+ALT+F2`, `CTRL+ALT+F1` to exit). Initially, you can log in as `root` or `chronos`(initially with access to passwordless sudo) without any passwords. Run `chromeos-setdevpasswd`(note that `passwd` does not work) to set the password(and sudo password) for `chronos`(this will also disable logging in as root), which you can use in `crosh`(CTRL+ALT+T). To use bash inside `crosh`, run `shell`.
 
 ## Resetting the device
 
