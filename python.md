@@ -10,3 +10,9 @@ tags: programming-language
 
 
 [Codon](https://github.com/exaloop/codon)
+
+[Anaconda](https://www.anaconda.com/)
+	
+[Conda](https://conda.io/projects/conda/en/latest/index.html)
+
+[Manim](https://github.com/3b1b/manim)
