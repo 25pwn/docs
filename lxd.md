@@ -2,8 +2,10 @@
 tags: linux-platform containers
 ---
 # LXD
-## Installation
-sources:
+[Introduction](https://linuxcontainers.org/lxd/introduction/)
+
+[Comparing LXD vs. LXC](https://discuss.linuxcontainers.org/t/comparing-lxd-vs-lxc/24)
+
 
 https://linuxcontainers.org/lxd/getting-started-cli/
 
@@ -14,13 +16,23 @@ https://linuxcontainers.org/lxd/docs/master/getting_started/
 https://wiki.archlinux.org/title/Linux_Containers
 
 https://wiki.archlinux.org/title/LXD
-	
-### Configuration
-```
-sudo systemctl enable --now lxd.service
-sudo lxc profile set default boot.autostart=false
 
-echo 'config:
+https://www.cyberciti.biz/faq/how-to-install-lxd-container-hypervisor-on-ubuntu-16-04-lts-server/
+
+## [Usage](https://linuxcontainers.org/lxd/docs/master/)
+### [Setup](https://linuxcontainers.org/lxd/docs/master/getting_started/)
+### [Installation](https://linuxcontainers.org/lxd/docs/master/installing/)
+```
+#this requires snap:
+# https://snapcraft.io/docs/installing-snapd
+
+sudo snap install lxd
+sudo systemctl enable --now lxd.service
+```
+### [Configuration](https://linuxcontainers.org/lxd/docs/master/howto/initialize/)
+```
+cat <<- 'EOF' | sudo lxd init --preseed
+config:
   images.auto_update_interval: "0"
 networks:
 - config:
@@ -50,18 +62,9 @@ profiles:
       type: disk
   name: default
 projects: []
-cluster: null' | sudo lxd init --preseed
+cluster: null
+EOF
 ```
-
-	# https://www.cyberciti.biz/faq/how-to-install-lxd-container-hypervisor-on-ubuntu-16-04-lts-server/
-
-	# this requires snap:
-	# https://snapcraft.io/docs/installing-snapd
-
-	echo "Installing LXD"
-	sudo snap install lxd
-
-## [Usage](https://linuxcontainers.org/lxd/docs/master/)
 ### [Images](https://linuxcontainers.org/lxd/docs/master/images/)
 List image servers
 ```
@@ -81,21 +84,29 @@ List of images
 archlinux: archlinux
 fedora rawhide: fedora/Rawhide
 ```
+Export image
+```
+sudo lxc image export ${REMOTE}:${IMAGE}
+```
+### [Profiles](https://linuxcontainers.org/lxd/docs/master/profiles/#)
+Profiles store a set of configuration options. If you don’t specify any profiles when launching a new instance, the default profile is applied automatically.
+
+```
+sudo lxc profile set default \
+boot.autostart=false \
+security.nesting=true \
+security.privileged=false \
+
+```
 ### [Instances](https://linuxcontainers.org/lxd/docs/master/instances/)
 Create instance
 ```
-sudo lxc init ${REMOTE}:${IMAGE} ${NAME} --config ${CONFIGS}
+sudo lxc init ${REMOTE}:${IMAGE} ${NAME}
 ```
 Create and start instance
 ```
 sudo lxc launch ${REMOTE}:${IMAGE} ${NAME}
 ```
-```
-sudo lxc launch ${REMOTE}:${IMAGE} ${NAME} \
---config security.nesting=true \
---config security.privileged=false \
-```
-
 Start/stop/restart container
 ```
 sudo lxc start ${NAME}
@@ -119,10 +130,7 @@ Delete container
 sudo lxc delete --force ${NAME}
 ```
 ### Misc
-Export image
-```
-sudo lxc image export ${REMOTE}:${IMAGE}
-```
+
 Reset LXD
 ```
 rm -rf snap/lxd
