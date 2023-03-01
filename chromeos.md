@@ -3,12 +3,21 @@ tags: linux-distro immutable
 ---
 # ChromeOS
 ## Usage
+### Crostini
 [Crostini](https://chromeos.dev/en/linux/setup)
 
 [Flatpak](https://flatpak.org/setup/Chrome%20OS/)
+
+[Running Custom Containers Under ChromeOS](https://chromium.googlesource.com/chromiumos/docs/+/HEAD/containers_and_vms.md)
+
+[Chrome OS devices/Crostini](https://wiki.archlinux.org/title/Chrome_OS_devices/Crostini)
+
+[/r/Crostini Wiki](https://www.reddit.com/r/Crostini/wiki/index/)
+
 ## Docs
 [ChromiumOS Developer Guide](https://chromium.googlesource.com/chromiumos/docs/+/HEAD/developer_guide.md)
-## Virtualization
+
+## Virtualization of ChromeOS
 [ChromeOS VM for Chromium developers](https://chromium.googlesource.com/chromiumos/docs/+/HEAD/cros_vm.md)
 
 [Brunch](https://github.com/sebanc/brunch)

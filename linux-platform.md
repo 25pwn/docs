@@ -13,3 +13,8 @@ tags: linux-platform os unix
 
 ## Gaming
 [ProtonDB](https://www.protondb.com/): Game compatibility
+
+## Other
+[LSB](https://en.wikipedia.org/wiki/Linux_Standard_Base)
+
+[XDG](https://en.wikipedia.org/wiki/Freedesktop.org)
