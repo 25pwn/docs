@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# install gnome-keyring libdbusmenu-glib
+# mkdir codetmp
+# cd codetmp
+# curl -O https://github.com/microsoft/vscode-cpptools/releases/download/cpptools-linux.vsix
+# download extensions
+# install extensions
+# rm -rf $(pwd)

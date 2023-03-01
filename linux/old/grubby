@@ -1,0 +1,6 @@
+#!/bin/bash
+cd /tmp
+git clone https://github.com/rhboot/grubby.git
+sudo make install
+
+# sudo grubby --config-file=/boot/efi/EFI/grub/grub.cfg --info=ALL

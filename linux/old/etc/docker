@@ -1,0 +1,16 @@
+docker run \
+          --env PS1="ADC(\#)[\d \T:\w]\\$ " \
+          --interactive \
+          --privileged \
+          --rm \
+          --tty \
+          --volume "/tmp/target:/target" \
+          "index.docker.io/library/archlinux:latest" /bin/bash
+
+
+mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+echo 'Server = http://mirrors.kernel.org/archlinux/$repo/os/$arch' | tee /etc/pacman.d/mirrorlist
+pacman-key --init
+pacman-key --populate archlinux
+pacman -Sy
+pacman -S --noconfirm arch-install-scripts

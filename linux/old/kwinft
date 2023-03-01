@@ -1,0 +1,3 @@
+#!/bin/bash
+packagelist="kwinft wrapland-kwinft disman-kwinft kdisplay-kwinft"
+yay -S $packagelist

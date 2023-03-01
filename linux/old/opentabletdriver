@@ -1,0 +1,24 @@
+#!/bin/bash
+
+
+
+cd $HOME/.cache/yay
+yay -G opentabletdriver
+cd opentabletdriver
+git checkout -b 0.5 0cdfd21b0c8eea955ce9b6ed307fa549add567be
+
+yay -S --needed --noconfirm dotnet-runtime-5.0
+
+makepkg -si
+
+sudo tee /etc/modprobe.d/blacklist_tablets.conf << 'EOF'
+blacklist wacom
+blacklist hid_uclogic
+EOF
+
+sudo rmmod wacom
+sudo rmmod hid_uclogic
+
+systemctl --user daemon-reload
+
+systemctl --user enable --now opentabletdriver

@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "SDL_VIDEODRIVER=wayland" | tee -a $HOME/.bash_profile

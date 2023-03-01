@@ -1,0 +1,26 @@
+https://wiki.archlinux.org/title/kernel
+
+# import keys
+gpg --import keys/pgp/*
+
+# create patch
+git format-patch -1 HEAD
+
+updpkgsums
+
+asp update linux
+asp export linux
+
+# clang llvm lld llvm-libs lldb
+
+makepkg --noarchive
+
+settings="O=../build LLVM=1 -j $(nproc)"
+# V=1
+config="tinyconfig"
+make ${settings} ${config} && make ${settings}
+
+settings="O=../build LLVM=1 -j $(nproc) ARCH=um"
+# V=1
+config="x86_64_defconfig"
+make ${settings} ${config} && make ${settings}

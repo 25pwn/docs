@@ -1,0 +1,9 @@
+#!/bin/bash
+# ibus ibus-mozc ibus-hangul
+
+echo "export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus" | tee -a $HOME/.bash_profile
+source $HOME/.bash_profile
+
+ibus-daemon -drxR
