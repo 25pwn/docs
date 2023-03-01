@@ -26,5 +26,9 @@ tags: linux-distro immutable
 
 [chromium_os-vm-vmware](https://github.com/FydeOS/chromium_os-vm-vmware)
 
+[Building Chrome for ChromeOS (Simple Chrome)](https://chromium.googlesource.com/chromiumos/docs/+/HEAD/simple_chrome_workflow.md)
+
+[Checking out and building Chromium on Linux](https://chromium.googlesource.com/chromium/src/+/HEAD/docs/linux/build_instructions.md)
+
 ## etc
 [Running virtual machines on your Chromebook](https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/running-virtual-machines-on-your-chromebook/)
