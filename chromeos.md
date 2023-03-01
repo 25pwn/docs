@@ -2,6 +2,10 @@
 tags: linux-distro immutable
 ---
 # ChromeOS
+## Usage
+[Crostini](https://chromeos.dev/en/linux/setup)
+
+[Flatpak](https://flatpak.org/setup/Chrome%20OS/)
 ## Docs
 [ChromiumOS Developer Guide](https://chromium.googlesource.com/chromiumos/docs/+/HEAD/developer_guide.md)
 ## Virtualization

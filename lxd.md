@@ -61,7 +61,8 @@ cluster: null' | sudo lxd init --preseed
 	echo "Installing LXD"
 	sudo snap install lxd
 
-## Usage
+## [Usage](https://linuxcontainers.org/lxd/docs/master/)
+### [Images](https://linuxcontainers.org/lxd/docs/master/images/)
 List image servers
 ```
 lxc remote list
@@ -80,10 +81,21 @@ List of images
 archlinux: archlinux
 fedora rawhide: fedora/Rawhide
 ```
-Create and start container
+### [Instances](https://linuxcontainers.org/lxd/docs/master/instances/)
+Create instance
+```
+sudo lxc init ${REMOTE}:${IMAGE} ${NAME} --config ${CONFIGS}
+```
+Create and start instance
 ```
 sudo lxc launch ${REMOTE}:${IMAGE} ${NAME}
 ```
+```
+sudo lxc launch ${REMOTE}:${IMAGE} ${NAME} \
+--config security.nesting=true \
+--config security.privileged=false \
+```
+
 Start/stop/restart container
 ```
 sudo lxc start ${NAME}
