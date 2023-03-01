@@ -1,0 +1,24 @@
+poweron
+    firmware(BIOS/UEFI)
+        POST
+        hardware init
+        BIOS:
+            Execute MBR if bootable
+        UEFI:
+            Find EFI Applications from ESP
+            UEFI Secure Boot is enabled -> check binary signature
+            execute binary(bootloader or EFISTUB if (CONFIG_EFI_STUB))
+    bootloader
+        load initramfs
+        boot kernel(vmlinux/vmlinuz with params)
+    kernel
+        initramfs stage/early userspace(if CONFIG_BLK_DEV_INITRD)
+            microcode early loading if applicable
+            rootfs decryption if applicable
+            mount real root and switch
+            execute init
+        late userspace
+            init calls getty or display manager per vt
+                getty runs login
+                    login runs shell if authenticated
+                display manager starts graphical session
