@@ -1,0 +1,22 @@
+#!/bin/bash
+# reset termina
+vmc destroy termina
+vmc create termina
+
+vmc start --enable-gpu --enable-vulkan termina
+
+vmc container termina penguin https://images.linuxcontainers.org $image
+
+
+
+vmc container termina penguin
+
+vsh termina
+
+
+# archlinux/current
+# debian/sid/default
+# fedora/35/cloud
+
+# lxc launch images:archlinux penguin
+lxc image list images:

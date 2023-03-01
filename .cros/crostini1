@@ -1,0 +1,219 @@
+# user
+
+generatelocale()
+{
+	if [ -f /etc/locale.gen.backup ]
+	then
+		return
+	fi
+	mv /etc/locale.gen /etc/locale.gen.backup
+	tee /etc/locale.gen <<- 'EOF' > /dev/null
+	en_US.UTF-8 UTF-8
+	EOF
+	locale-gen
+	localectl set-locale LANG=en_US.UTF-8
+	unset LANG
+	source /etc/profile.d/locale.sh
+}
+generatelocale
+
+#!/bin/bash
+# run as: user
+# pre: useraccount
+make_dropin()
+{
+	if [ -d "$HOME/.bash_profile.d" ]
+	then
+		return
+	fi
+	mkdir $HOME/.bash_profile.d
+	tee -a $HOME/.bash_profile <<- 'EOF' > /dev/null
+	# Append "$1" to $PATH when not already in.
+	# This function API is accessible to scripts in $HOME/.bash_profile.d
+	append_path () {
+		case ":$PATH:" in
+			*:"$1":*)
+				;;
+			*)
+				PATH="${PATH:+$PATH:}$1"
+		esac
+	}
+
+	# Append our default paths
+	# Force PATH to be environment
+	export PATH
+
+	# Load profiles from $HOME/.bash_profile.d
+	if test -d $HOME/.bash_profile.d; then
+			for profile in $HOME/.bash_profile.d/*.sh; do
+					test -r "$profile" && . "$profile"
+			done
+			unset profile
+	fi
+
+	# Unload our profile API functions
+	unset -f append_path
+	EOF
+	source $HOME/.bash_profile
+
+}
+make_dropin
+
+configure_repos()
+{
+	if [ -f "/etc/pacman.d/mirrorlist.backup" ]
+	then
+		return
+	fi
+	mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+	tee /etc/pacman.d/mirrorlist <<- 'EOF' > /dev/null
+	Server = https://mirrors.kernel.org/archlinux/$repo/os/$arch
+	Server = https://mirror.rackspace.com/archlinux/$repo/os/$arch
+	EOF
+
+	pacman-key --init
+	pacman-key --populate archlinux
+	
+	pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com
+	pacman-key --lsign-key FBA220DFC880C036
+	pacman -U --needed --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+
+	tee -a /etc/pacman.conf <<- 'EOF' > /dev/null
+	[options]
+	ParallelDownloads = 16
+	Include = /etc/pacman.d/chaotic-aur
+	Include = /etc/pacman.d/nicopwn
+	EOF
+
+	tee -a /etc/pacman.d/chaotic-aur <<- 'EOF' > /dev/null
+	[chaotic-aur]
+	Include = /etc/pacman.d/chaotic-mirrorlist
+	EOF
+	
+	tee -a /etc/pacman.d/nicopwn <<- 'EOF' > /dev/null
+	[nicopwn]
+	SigLevel = Optional TrustAll
+	Server = https://raw.githubusercontent.com/25pwn/pacman-repo/master/repo/$arch
+	EOF
+
+	pacman -Sy
+}
+
+configure_paccache()
+{
+	if [ -f "/usr/share/libalpm/hooks/paccache.hook" ]
+	then
+		return
+	fi
+	tee /usr/share/libalpm/hooks/paccache.hook <<- 'EOF' > /dev/null
+	[Trigger]
+	Operation = Install
+	Operation = Remove
+	Operation = Upgrade
+	Type = Package
+	Target = *
+	[Action]
+	Description = running paccache -rvk1
+	When = PostTransaction
+	Exec = /usr/bin/paccache -rvk1
+	EOF
+	# pacman -Sc
+	pacman -S --needed --noconfirm pacman-contrib
+}
+
+configure_repos
+configure_paccache
+
+pacman -S --needed --noconfirm paru
+
+mkdir -p /etc/sudoers.d
+
+#!/bin/bash
+tee /etc/sudoers.d/wheel << 'EOF' > /dev/null
+%wheel ALL=(ALL) ALL
+EOF
+
+tee /etc/sudoers.d/timestamp_timeout << 'EOF' > /dev/null
+Defaults timestamp_timeout=-1
+EOF
+
+username=$(grep 1000:1000 /etc/passwd|cut -d':' -f1)
+if [ "${username}" == "" ]
+then
+username=user
+fi
+
+createuser()
+{
+	if [ "$(compgen -u | grep -c "$username")" != "0" ]
+	then
+		true
+		# return
+	fi
+	useradd -mG wheel $username
+	passwd -d $username
+	usermod -aG wheel $username
+}
+createuser
+
+su - $username <<- 'EOSU'
+	#!/bin/bash
+	# run as: user
+	# pre: useraccount
+	make_dropin()
+	{
+		if [ -d "$HOME/.bash_profile.d" ]
+		then
+			return
+		fi
+		mkdir $HOME/.bash_profile.d
+		tee -a $HOME/.bash_profile <<- 'EOF' > /dev/null
+		# Append "$1" to $PATH when not already in.
+		# This function API is accessible to scripts in $HOME/.bash_profile.d
+		append_path () {
+			case ":$PATH:" in
+				*:"$1":*)
+					;;
+				*)
+					PATH="${PATH:+$PATH:}$1"
+			esac
+		}
+
+		# Append our default paths
+		# Force PATH to be environment
+		export PATH
+
+		# Load profiles from $HOME/.bash_profile.d
+		if test -d $HOME/.bash_profile.d; then
+				for profile in $HOME/.bash_profile.d/*.sh; do
+						test -r "$profile" && . "$profile"
+				done
+				unset profile
+		fi
+
+		# Unload our profile API functions
+		unset -f append_path
+		EOF
+		source $HOME/.bash_profile
+
+	}
+	make_dropin
+	
+	paru -Sy --noconfirm --needed sudo networkmanager util-linux \
+	nano vi tmux htop arch-install-scripts base-devel \
+	man-db p7zip gptfdisk \
+	openssh rsync wget curl aria2 iputils traceroute \
+	noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra \
+	pipewire pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire wireplumber \
+	xdg-desktop-portal-kde xdg-desktop-portal-gtk xdg-desktop-portal-gnome xdg-desktop-portal \
+	wayland \
+	phonon-qt5-vlc phonon-qt5-gstreamer gst-libav gst-plugins-good gst-plugins-ugly gst-plugins-bad gstreamer-vaapi \
+	plasma-meta plasma sddm plasma-wayland-session \
+	konsole dolphin kate ark \
+	gcc clang make cmake git gdb lldb \
+	visual-studio-code-bin gnome-keyring \
+	cros-container-guest-tools-git
+EOSU
+if [ ! -d "/etc/skel/.config/pulse" ]
+then cp -r /etc/skel/.config/pulse ~/.config
+fi
