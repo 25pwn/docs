@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# flatpak --user install org.mozilla.firefox//stable org.freedesktop.Platform.ffmpeg-full
-
-# flatpak --user run org.mozilla.firefox
-
-# media.ffmpeg.vaapi.enabled
-# widget.use-xdg-desktop-portal.file-picker
-# widget.use-xdg-desktop-portal

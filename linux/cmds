@@ -1,7 +1,0 @@
-unzip -O cp949 file # unzip korean
-du -sh .
-sudo efibootmgr -r -c -l \EFI\quibble\amd64\drivers\btrfs.efi -L btrfs
-
-x11docker --wayland --desktop  --gpu  --pulseaudio x11docker/
-
-x11docker --gpu --home --init=systemd -- --cap-add SYS_RESOURCE -- x11docker/kde-plasma startplasma-wayland

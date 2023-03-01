@@ -1,3 +1,0 @@
-#!/bin/bash
-echo "$(whoami):100000:65536" | sudo tee -a /etc/subuid
-echo "$(whoami):100000:65536" | sudo tee -a /etc/subgid

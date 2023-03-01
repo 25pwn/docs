@@ -1,6 +1,0 @@
-kcm-tablet-git systemd-kcm kcm-uefi
-
-kcm-grub2-git
-# kcm-polkit-kde-git
-
-exfatprogs ntfs-3g xorg-xhost

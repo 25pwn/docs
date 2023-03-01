@@ -1,5 +1,0 @@
-#!/bin/bash
-# libvirt qemu edk2-ovmf dnsmasq
-sudo systemctl enable --now libvirtd.service
-
-sudo systemctl enable --now dnsmasq.service

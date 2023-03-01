@@ -1,7 +1,0 @@
-#!/bin/bash
-mkdir -p $HOME/.local/bin
-echo "#!/bin/bash
-sudo true
-yay -Syu --noconfirm
-flatpak --user -y update" | tee $HOME/.local/bin/update
-chmod +x $HOME/.local/bin/update

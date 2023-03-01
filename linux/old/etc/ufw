@@ -1,8 +1,0 @@
-#!/bin/bash
-
-sudo systemctl enable --now ufw.service
-sudo systemctl disable --now iptables.service
-sudo systemctl disable --now ip6tables.service
-
-sudo ufw default allow
-sudo ufw enable

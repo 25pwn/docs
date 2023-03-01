@@ -1,11 +1,10 @@
 ---
 tags: linux-platform containers
 ---
-# LXD
+# **LXD**
 [Introduction](https://linuxcontainers.org/lxd/introduction/)
 
 [Comparing LXD vs. LXC](https://discuss.linuxcontainers.org/t/comparing-lxd-vs-lxc/24)
-
 
 https://linuxcontainers.org/lxd/getting-started-cli/
 
@@ -19,86 +18,95 @@ https://wiki.archlinux.org/title/LXD
 
 https://www.cyberciti.biz/faq/how-to-install-lxd-container-hypervisor-on-ubuntu-16-04-lts-server/
 
-## [Usage](https://linuxcontainers.org/lxd/docs/master/)
-### [Setup](https://linuxcontainers.org/lxd/docs/master/getting_started/)
+# [Usage](https://linuxcontainers.org/lxd/docs/master/)
+## [Setup](https://linuxcontainers.org/lxd/docs/master/getting_started/)
 ### [Installation](https://linuxcontainers.org/lxd/docs/master/installing/)
+Using [snap](https://snapcraft.io/docs/installing-snapd):
 ```
-#this requires snap:
-# https://snapcraft.io/docs/installing-snapd
-
 sudo snap install lxd
+```
+Required on arch:
+```
 sudo systemctl enable --now lxd.service
 ```
-### [Configuration](https://linuxcontainers.org/lxd/docs/master/howto/initialize/)
-```
-cat <<- 'EOF' | sudo lxd init --preseed
-config:
-  images.auto_update_interval: "0"
-networks:
-- config:
-    ipv4.address: auto
-    ipv6.address: auto
-  description: ""
-  name: lxdbr0
-  type: ""
-  project: default
-storage_pools:
-- config:
-    source: /var/lib/lxd/storage-pools/default
-  description: ""
-  name: default
-  driver: btrfs
-profiles:
-- config: {}
-  description: ""
-  devices:
-    eth0:
-      name: eth0
-      network: lxdbr0
-      type: nic
-    root:
-      path: /
-      pool: default
-      type: disk
-  name: default
-projects: []
-cluster: null
-EOF
-```
-### [Images](https://linuxcontainers.org/lxd/docs/master/images/)
-List image servers
-```
-lxc remote list
-```
-List of image servers
-```
-images
-```
-Search for images
+### [Initialization](https://linuxcontainers.org/lxd/docs/master/howto/initialize/)
+	```
+	cat <<- 'EOF' | sudo lxd init --preseed
+	config:
+	images.auto_update_interval: "0"
+	networks:
+	- config:
+		ipv4.address: auto
+		ipv6.address: auto
+	description: ""
+	name: lxdbr0
+	type: ""
+	project: default
+	storage_pools:
+	- config:
+		source: /var/lib/lxd/storage-pools/default
+	description: ""
+	name: default
+	driver: btrfs
+	profiles:
+	- config: {}
+	description: ""
+	devices:
+		eth0:
+		name: eth0
+		network: lxdbr0
+		type: nic
+		root:
+		path: /
+		pool: default
+		type: disk
+	name: default
+	projects: []
+	cluster: null
+	EOF
+	```
+### [Server configuration](https://linuxcontainers.org/lxd/docs/master/server/)
 
+	Recommended defaults:
+	```
+	sudo lxc config set \
+	images.auto_update_cached=false
+	```
+### [Remotes](https://linuxcontainers.org/lxd/docs/master/remotes/)
+
+	List remotes
+	```
+	lxc remote list
+	```
+## [Images](https://linuxcontainers.org/lxd/docs/master/images/)
+
+Search for images
 ```
 lxc image list ${REMOTE}:${SEARCH_TERM}
 ```
+
 List of images
 ```
 archlinux: archlinux
 fedora rawhide: fedora/Rawhide
 ```
+
 Export image
 ```
 sudo lxc image export ${REMOTE}:${IMAGE}
 ```
-### [Profiles](https://linuxcontainers.org/lxd/docs/master/profiles/#)
-Profiles store a set of configuration options. If you don’t specify any profiles when launching a new instance, the default profile is applied automatically.
 
+## [Profiles](https://linuxcontainers.org/lxd/docs/master/profiles/#)
+
+Recommended defaults:
 ```
 sudo lxc profile set default \
 boot.autostart=false \
 security.nesting=true \
-security.privileged=false \
+security.privileged=false
 
 ```
-### [Instances](https://linuxcontainers.org/lxd/docs/master/instances/)
+## [Instances](https://linuxcontainers.org/lxd/docs/master/instances/)
 Create instance
 ```
 sudo lxc init ${REMOTE}:${IMAGE} ${NAME}
@@ -107,7 +115,7 @@ Create and start instance
 ```
 sudo lxc launch ${REMOTE}:${IMAGE} ${NAME}
 ```
-Start/stop/restart container
+Start/stop/restart instance
 ```
 sudo lxc start ${NAME}
 sudo lxc stop ${NAME}
