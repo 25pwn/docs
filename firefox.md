@@ -5,6 +5,8 @@ tags: browser
 
 [Downloads](https://www.mozilla.org/en-US/firefox/all/)
 
+[Nightly](https://wiki.mozilla.org/Nightly)
+
 ## GPU Acceleration
 
 In `about:config`, set [`media.ffmpeg.vaapi.enabled` to `true`](https://bugzilla.mozilla.org/show_bug.cgi?id=1683808)
