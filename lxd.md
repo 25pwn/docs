@@ -154,3 +154,6 @@ cat <<EOF | sudo tee /etc/systemd/system/user@.service.d/delegate.conf
 Delegate=cpu cpuset io memory pids
 EOF
 sudo systemctl daemon-reload
+
+## etc
+[Bindmount for .X11-unix only works when done if container is running](https://github.com/lxc/lxd/issues/4540#issuecomment-387644954)

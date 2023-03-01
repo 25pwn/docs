@@ -28,3 +28,6 @@ distrobox create
 [[Error] Can not distrobox enter after using --init flag, for ubuntu docker image](https://github.com/89luca89/distrobox/issues/348)
 
 [[Error] distrobox enter fails on Fedora Silverblue 36 with --init container](https://github.com/89luca89/distrobox/issues/379)
+
+## etc
+[[Feature] Sandboxed mode](https://github.com/89luca89/distrobox/issues/28)
