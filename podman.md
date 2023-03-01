@@ -52,3 +52,6 @@ fedora-systemd /sbin/init & disown
 setsebool -P container_manage_cgroup true
 podman exec -it fedora-systemd-test /bin/bash
 ```
+
+## Integration
+[distrobox issue](https://github.com/89luca89/distrobox/issues/28#issuecomment-1358676335)
