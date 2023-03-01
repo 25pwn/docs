@@ -2,19 +2,21 @@
 tags: linux-platform containers
 ---
 # Distrobox
+
+[Docs](https://github.com/89luca89/distrobox/tree/main/docs)
 ```
-image="archlinux:latest"
-container_name="a0"
+IMAGE="archlinux:latest"
+NAME="a0"
 
-image="fedora:37"
-container_name="f0"
+IMAGE="fedora:37"
+NAME="f0"
 
-mkdir -p "${HOME}/distrobox/${container_name}"
+mkdir -p "${HOME}/distrobox/${NAME}"
 
 distrobox create \
---name "${container_name}" \
---image "${image}" \
---home "${HOME}/distrobox/${container_name}" \
+--name "${NAME}" \
+--image "${IMAGE}" \
+--home "${HOME}/distrobox/${NAME}" \
 --pre-init-hooks 'dnf install -y systemd' \
 --init-hooks 'umount /var/lib/flatpak' \
 --init
