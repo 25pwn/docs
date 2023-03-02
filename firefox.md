@@ -8,12 +8,15 @@ tags: browser
 [Nightly](https://wiki.mozilla.org/Nightly)
 
 ## GPU Acceleration
-
+### VAAPI
 In `about:config`, set [`media.ffmpeg.vaapi.enabled` to `true`](https://bugzilla.mozilla.org/show_bug.cgi?id=1683808)
 
-Set the [environment variable](https://github.com/25pwn/wiki/wiki/Environment-Variables(Linux)) [`MOZ_DISABLE_RDD_SANDBOX=1`](https://bugzilla.mozilla.org/show_bug.cgi?id=1751363)(Due to a bug in firefox 98+)
+On flatpak, additionally install `org.freedesktop.Platform.ffmpeg-full`.
 
-On flatpak, additionally install `org.freedesktop.Platform.ffmpeg-full` and set `LIBVA_DRIVER_NAME` using `flatpak override`.
+### WebGPU
+[Set `gfx.webrender.all` and `dom.webgpu.enabled` to `true`](https://github.com/gpuweb/gpuweb/wiki/Implementation-Status)
+
+https://hacks.mozilla.org/2020/04/experimental-webgpu-in-firefox/
 
 ## Extensions
 
