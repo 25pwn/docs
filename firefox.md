@@ -7,6 +7,43 @@ tags: browser
 
 [Nightly](https://wiki.mozilla.org/Nightly)
 
+## Internals
+### about pages
+[about:about](about:about)
+
+[about:addons](about:addons)
+
+[about:config](about:config)
+
+[about:downloads](about:downloads)
+
+[about:logins](about:logins)
+
+[about:memory](about:memory)
+
+[about:performance](about:performance)
+
+[about:plugins](about:plugins)
+
+[about:policies](about:policies)
+
+[about:preferences](about:preferences)
+
+[about:processes](about:processes)
+
+[about:profiles](about:profiles)
+
+[about:profiling](about:profiling)
+
+[about:protections](about:protections)
+
+[about:support](about:support)
+
+[about:unloads](about:unloads)
+
+[about:url-classifier](about:url-classifier)
+
+
 ## GPU Acceleration
 ### VAAPI
 In `about:config`, set [`media.ffmpeg.vaapi.enabled` to `true`](https://bugzilla.mozilla.org/show_bug.cgi?id=1683808)
