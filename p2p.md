@@ -9,6 +9,7 @@ iw phy
 ```
 
 https://w1.fi/wpa_supplicant/devel/p2p.html
+https://kasiviswanathanblog.wordpress.com/wifi-p2p-in-linux/
 
 ```
 nmcli -f GENERAL,WIFI-PROPERTIES dev show wlp4s0
