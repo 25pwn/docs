@@ -7,9 +7,9 @@ tags:
 - google
 ---
 # ChromeOS
----
 [Repository](https://chromium.googlesource.com/codesearch/chromium/src/+/refs/heads/master-original/chromeos/)
----
+
+
 Note: Chrome OS devices' keys between `ESC` and `LOCK` are just function keys with different legends.
 
 ## [Developer Mode](https://chromium.googlesource.com/chromiumos/docs/+/HEAD/developer_mode.md)

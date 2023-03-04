@@ -5,4 +5,4 @@ tags:
 # macOS
 
 # See also
-[installing_macos_on_a_virtual_machine](installing_macos_on_a_virtual_machine.md)
+[installing_macos_on_a_virtual_machine](/external/installing_macos_on_a_virtual_machine.md)
