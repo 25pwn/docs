@@ -4,28 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "f8598572db347cef",
+        "id": "2c94b7a38fc7fa7c",
         "type": "tabs",
         "children": [
           {
-            "id": "ed533634c7d7e070",
+            "id": "5f69bf03edbc33cd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "chromeos.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6ecb560600d5503f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "flatpak.md",
+                "file": "wiki/android.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "chromeos.md",
+                "file": "wiki/android.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "chromeos.md",
+                "file": "wiki/android.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "chromeos.md"
+                "file": "wiki/android.md"
               }
             }
           }
@@ -158,8 +146,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ed533634c7d7e070",
+  "active": "5f69bf03edbc33cd",
   "lastOpenFiles": [
+    "external/installing_macos_on_a_virtual_machine.md",
+    "wiki/macos.md",
+    "external/Installing.md",
+    "wiki/linux-platform.md",
+    "wiki/android.md",
+    "wiki",
+    "external",
+    "external.md",
+    "wiki/arc.md",
+    "wiki/apple.md",
+    "wiki/appimage.md",
+    "wiki/obsidian.md",
+    "wiki/chromeos.md",
     "staging/cros/fedora",
     "staging/cros/crostini1",
     "staging/cros/crostini0",
@@ -168,9 +169,6 @@
     "staging/cros",
     "staging/flinux/old/etc/virt-manager",
     "staging/flinux/old/etc/updatescript",
-    "staging/flinux/old/etc/ufw",
-    "staging/flinux/old/etc/toolbox",
-    "staging/flinux/old/etc/swapfile",
     "staging/articles.md",
     "staging/attackontitan.md",
     "staging/fedora.md",
@@ -178,23 +176,13 @@
     "staging/resources.md",
     "staging/stash.md",
     "staging/system.md",
-    "chromiumos.md",
-    "windows.md",
-    "yt-dlp.md",
-    "xnu.md",
-    "bsd.md",
-    "flatpak.md",
-    "Untitled.md",
-    "chromeos.md",
-    "clang.md",
-    "chrome.md",
-    "cheatsh.md",
-    "btrfs.md",
-    "bubblewrap.md",
-    "browser.md",
-    "bsd_kernel.md",
-    "bash.md",
-    "bad apple.md",
-    "archlinux.md"
+    "wiki/chromiumos.md",
+    "wiki/windows.md",
+    "wiki/yt-dlp.md",
+    "wiki/xnu.md",
+    "wiki/bsd.md",
+    "wiki/flatpak.md",
+    "wiki/clang.md",
+    "wiki/chrome.md"
   ]
 }
