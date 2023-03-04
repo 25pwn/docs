@@ -13,5 +13,8 @@ tags: brand
 - [t2linux](https://wiki.t2linux.org/)
 - [asahi linux](https://asahilinux.org/2022/03/asahi-linux-alpha-release/)
 
+## Virtualization
+[Installing macOS on a Virtual Machine](https://developer.apple.com/documentation/virtualization/installing_macos_on_a_virtual_machine)
+
 ## etc
 [A reason why Mac speakers sound better and louder than most](https://news.ycombinator.com/item?id=34935483)
