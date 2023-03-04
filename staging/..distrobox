@@ -1,2 +1,0 @@
-distrobox create -i docker.io/library/archlinux:latest -n arduino -Y -H # -r
-distrobox enter -n arduino -nw # -r

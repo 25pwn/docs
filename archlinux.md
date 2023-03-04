@@ -1,5 +1,7 @@
 ---
-tags: linux-distro
+tags:
+- os/linux/archlinux
+- platform/linux
 ---
 # Archlinux
 ## Packaging

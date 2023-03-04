@@ -1,5 +1,9 @@
 ---
-tags: linux-distro
+- os/linux/chromeos
+- platform/chromeos
+- os/immutable
+- source_model/open-source
+- google
 ---
 # ChromiumOS
 

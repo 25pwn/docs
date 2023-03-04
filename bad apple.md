@@ -1,5 +1,7 @@
 ---
-tags: touhou meme
+tags:
+- touhou
+- meme
 ---
 # Bad Apple!!
 

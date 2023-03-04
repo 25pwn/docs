@@ -1,5 +1,7 @@
 ---
-tags: linux-platform package-manager
+tags:
+- platform/linux
+- packaging
 ---
 # AppImage
 [AppImage](https://github.com/AppImage/appimagekit)

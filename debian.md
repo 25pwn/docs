@@ -1,5 +1,6 @@
 ---
-tags: linux-distro
+tags:
+- os/linux
 ---
 # Debian
 

@@ -1,5 +1,7 @@
 ---
-tags: browser
+tags:
+- browser
+- google
 ---
 # Chrome
 ## Settings

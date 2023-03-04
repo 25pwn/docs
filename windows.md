@@ -1,5 +1,8 @@
 ---
-tags: os
+tags:
+- os/windows
+- platform/windows
+- os_kernel/nt
 ---
 # Windows
 ## Installation

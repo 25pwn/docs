@@ -1,5 +1,6 @@
 ---
-tags: linux-platform containers
+tags:
+- platform/linux
 ---
 # **LXD**
 [Introduction](https://linuxcontainers.org/lxd/introduction/)

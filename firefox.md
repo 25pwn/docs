@@ -1,5 +1,7 @@
 ---
-tags: browser
+tags:
+- browser
+- mozilla
 ---
 # Firefox
 

@@ -1,4 +1,10 @@
-ARC
+---
+tags:
+- platform/chromeos
+- os/linux/android
+- virtualization
+---
+# ARC
 
 [arc](https://chromium.googlesource.com/chromiumos/platform2/+/HEAD/arc/)
 

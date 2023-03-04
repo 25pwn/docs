@@ -1,5 +1,9 @@
 ---
-tags: llvm c c++ compiler
+tags: 
+- llvm/clang
+- compiler/c
+- compiler/c++
+- source_language/c++
 ---
 # Clang
 # Usage

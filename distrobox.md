@@ -1,5 +1,7 @@
 ---
-tags: linux-platform containers
+tags: 
+- platform/linux-platform
+- virtualization/containerization
 ---
 # Distrobox
 

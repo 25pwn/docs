@@ -1,5 +1,7 @@
 ---
-tags: linux-kernel filesystem
+tags:
+- platform/linux
+- filesystem/cow
 ---
 # BTRFS
 ## btrfs-progs

@@ -1,5 +1,8 @@
 ---
-tags: linux-platform os unix
+tags:
+- os/linux
+- os_kernel/linux
+- unix
 ---
 # Linux
 ## Recommended distros

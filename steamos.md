@@ -1,5 +1,6 @@
 ---
-tags: linux-distro immutable
+tags:
+- os/linux
 ---
 # SteamOS
 [HoloISO](https://github.com/theVakhovskeIsTaken/holoiso)
