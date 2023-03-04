@@ -1,0 +1,19 @@
+#!/bin/bash
+sudo cgpt show -v /dev/mmcblk0
+
+start=17092608
+size=105050064
+state_size=$(($size / 2))
+
+echo sudo cgpt add -i 1 -b $start -s $state_size /dev/mmcblk0
+echo sudo cgpt add -i 13 -b $(($start + $state_size + 1)) -s $((size-state_size)) -t kernel -l KERN-D /dev/mmcblk0
+# https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/cr-48-chrome-notebook-developer-information/how-to-boot-ubuntu-on-a-cr-48/
+
+# reboot
+crossystem dev_boot_legacy=1 dev_boot_usb=1 dev_boot_signed_only=0
+
+
+curl -LO mrchromebox.tech/firmware-util.sh
+install -Dt /usr/local/bin -m 755 firmware-util.sh
+
+sudo mkfs.ext4 /dev/mmcblk0p13

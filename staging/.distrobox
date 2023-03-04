@@ -1,0 +1,39 @@
+paru -S podman
+
+curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/extras/install-podman | sh -s -- --prefix ~/.local
+ln -sf .local/
+
+image="archlinux:latest"
+container_name="arch.test.noinit"
+mkdir -p "${HOME}/distrobox/${container_name}"
+distrobox create --name "${container_name}" --image "${image}" --home "${HOME}/distrobox/${container_name}" --init
+
+sudo tee "/usr/share/wayland-sessions/distrobox-${container_name}-plasma.desktop" <<- EOF > /dev/null
+[Desktop Entry]
+Exec=/usr/bin/distrobox-enter "${container_name}" -- /usr/lib/plasma-dbus-run-session-if-needed /usr/bin/startplasma-wayland
+TryExec=/usr/bin/startplasma-wayland
+DesktopNames=KDE
+Name=Plasma (Wayland, distrobox ${container_name})
+X-KDE-PluginInfo-Version=5.25.5
+EOF
+
+
+sudo umount /run/systemd/system
+sudo rmdir /run/systemd/system
+sudo ln -sf /run/host/run/systemd/system /run/systemd
+sudo ln -sf /run/host/run/dbus/system_bus_socket /run/dbus/
+
+sudo pacman -S --needed --noconfirm pipewire pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire wireplumber xdg-desktop-portal-kde xdg-desktop-portal-gtk xdg-desktop-portal-gnome xdg-desktop-portal wayland phonon-qt5-vlc phonon-qt5-gstreamer gst-libav gst-plugins-good gst-plugins-ugly gst-plugins-bad gstreamer-vaapi packagekit-qt5 plasma-meta plasma sddm plasma-wayland-session konsole dolphin kate spectacle plasma-systemmonitor ksysguard ark kwalletmanager
+
+
+
+
+sudo tee "/etc/profile.d/fix_tmp.sh" <<- 'EOF' > /dev/null
+chown -R $USER:$USER /tmp/.X11-unix
+EOF
+
+tee -a "${HOME}/.profile" <<- 'EOF' > /dev/null
+if [ -f /usr/libexec/kactivitymanagerd ]; then
+  /usr/libexec/kactivitymanagerd & disown
+fi
+EOF

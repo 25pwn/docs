@@ -1,0 +1,8 @@
+dhclient
+dnf -y install NetworkManager
+systemctl disable systemd-networkd
+systemctl disable systemd-resolved
+systemctl enable NetworkManager
+unlink /etc/resolv.conf
+
+dnf install -y sudo cros-guest-tools

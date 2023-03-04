@@ -1,0 +1,31 @@
+https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.215-2/virtio-win-0.1.215.iso
+
+req tpm device
+
+mountvol
+mountvol Z:\ PATH
+
+# fsutil fsinfo drives
+# wmic logicaldisk get deviceid, volumename, description
+
+# diskpart
+## list volume
+## sel vol
+## assign letter=D
+
+# win11 requires stpm and ovmf-secboot
+
+
+
+drvload E:\NetKVM\w11\amd64
+drvload E:\viofs\w11\amd64
+drvload E:\viogpudo\w11\amd64
+drvload E:\viostor\w11\amd64
+
+dism /Get-WimInfo /WimFile:${SRC_VOL}:\Sources\install.${IMG_TYPE}
+dism /Apply-Image /ImageFile:${SRC_VOL}:\Sources\install.${IMG_TYPE} /index:${IMG_INDEX} /ApplyDir:${DEST_VOL}:\
+${DEST_VOL}:\Windows\System32\bcdboot ${DEST_VOL}:\Windows /s ${EFI_VOL}:\ /addlast
+
+dism /image:c:\ /add-driver /driver:E:\amd64\w11\viostor.inf
+
+pnputil -i -a DRIVER

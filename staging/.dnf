@@ -1,0 +1,12 @@
+/etc/dnf/dnf.conf
+
+max_parallel_downloads=16
+fastestmirror=true
+
+rpm-ostree install git wget curl ruby ruby-devel zsh util-linux-user redhat-rpm-config gcc gcc-c++ make
+
+rpm-ostree install git wget curl zsh tmux util-linux-user redhat-rpm-config
+
+rpm-ostree ex apply-live
+
+rpm-ostree install --apply-live

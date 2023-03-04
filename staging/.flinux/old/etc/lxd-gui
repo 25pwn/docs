@@ -1,0 +1,25 @@
+#!/bin/bash
+# sources:
+# https://github.com/lxc/lxd/issues/4540#issuecomment-387644954
+
+containername="test0"
+
+sudo lxc config device add $containername waylandsock disk source=$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY path=/mnt/wayland
+sudo lxc file push - $containername/etc/systemd/system/$(systemd-escape -p $XDG_RUNTIME_DIR/$WAYLAND_DISPLAY).mount <<EOF
+[Unit]
+Description=bind mount /mnt/wayland to $XDG_RUNTIME_DIR/$WAYLAND_DISPLAY
+After=sysinit.target
+
+[Mount]
+What=/mnt/wayland
+Where=$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY
+Type=none
+Options=bind
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo lxc exec $containername sudo systemctl daemon-reload
+
+sudo lxc exec $containername sudo systemctl enable --now $(systemd-escape -p $XDG_RUNTIME_DIR/$WAYLAND_DISPLAY).mount

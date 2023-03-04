@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# sudo timedatectl set-ntp 1
+# hostnamectl set-hostname name
+
+# systemd-kcm kcm-uefi
+# kcm-grub2-git
+# kcm-polkit-kde-git
+# exfatprogs ntfs-3g xorg-xhost

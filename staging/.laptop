@@ -1,0 +1,83 @@
+lenovo
+	thinkpad 
+	https://www.lenovo.com/kr/ko/thinkpad#shop-products
+	https://www.lenovo.com/kr/ko/laptops/thinkpad/thinkpad-t-series/c/thinkpad-t-series
+	https://www.lenovo.com/kr/ko/laptops/thinkpad/thinkpad-p-series/c/thinkpad-p-series
+		p15 gen 2 https://www.lenovo.com/us/en/configurator/cto/index.html?bundleId=20YQCTO1WWUS1
+			+ intel 11
+			+ IPS 1080p 500
+			+ 94Wh
+			+ T1200 4GB
+			- 4+ mo
+			+ $1729
+			
+		p1 gen 4 https://www.lenovo.com/us/en/configurator/cto/index.html?bundleId=20Y3CTO1WWUS1
+		https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadp/thinkpad-p1-gen-4/wmd00000463
+			+ intel 11
+			+ IPS 1440p 400
+			+ 90Wh
+			+ RTX 3070 Max-Q 8GB
+			+ $2159
+		
+		p14s gen 2 amd https://www.lenovo.com/us/en/configurator/cto/index.html?bundleId=21A0CTO1WWUS2
+			+ AMD 5
+			+ IPS 1080p 300
+			- 50Wh
+			+ $1569
+			
+		t14 gen 2 amd https://www.lenovo.com/us/en/configurator/cto/index.html?bundleId=20XKCTO1WWUS1
+			+ AMD 5
+			+ IPS 1080p 500
+			- 50Wh
+			+ $1264
+			+ 3+ mo
+		
+		p16s https://www.lenovo.com/kr/ko/laptops/thinkpad/thinkpad-p-series/ThinkPad-P16s-16-inch-Intel/p/LEN101T0012
+			+ intel 12p
+			+ IPS 1080p 300
+			+ T550 4GB
+			+ 86Wh
+			+ 10w+
+			+ 2032000 KRW
+		https://www.lenovo.com/kr/ko/laptops/thinkpad/thinkpad-t-series/T14s-AMD-G2/p/22TPT144SA1
+		https://www.lenovo.com/kr/ko/laptops/thinkpad/thinkpad-p-series/ThinkPad-P15s-Gen-2-15%E2%80%9D-Intel/p/22WSP15P5S2
+		
+asus
+	zephyrus https://www.asus.com/kr/Laptops/For-Gaming/ROG-Republic-of-Gamers/filter?SubSeries=ROG-Zephyrus
+		G15 2022 https://rog.asus.com/laptops/rog-zephyrus/rog-zephyrus-g15-2022-series/spec
+			https://kr.store.asus.com/90nr0811-m002x0-ga503rm-hq060.html
+			https://kr.store.asus.com/90nr0812-m002y0-ga503rm-hq049.html
+			https://www.11st.co.kr/products/4424639995?trTypeCd=03&trCtgrNo=2068613
+			https://www.11st.co.kr/products/4482075160?trTypeCd=03&trCtgrNo=2068613
+			+ AMD 6
+			+ RTX 3060/3070 Ti
+			+ 90Wh
+			+ IPS 1440p 240Hz
+		M16 2022 https://rog.asus.com/laptops/rog-zephyrus/rog-zephyrus-m16-2022-series/spec
+			+ AMD 6
+			+ RTX 3060/3070 Ti/3080 Ti
+			+ 90Wh
+			+ IPS 1600p 165Hz
+	ROG Strix https://www.asus.com/kr/Laptops/For-Gaming/ROG-Republic-of-Gamers/filter?SubSeries=ROG-Strix
+		G15 2022 https://rog.asus.com/laptops/rog-strix/rog-strix-g15-2022-series/spec
+			+ AMD 6
+			+ RTX 3080
+			+ 90Wh
+			+ IPS 1080p 300Hz
+		G17 2022 https://rog.asus.com/laptops/rog-strix/rog-strix-g17-2022-series/spec
+			https://kr.store.asus.com/90nr08k4-m002j0-g713rm-kh053.html
+			https://kr.store.asus.com/90nr08k4-m006e0-g713rm-ll121.html
+			+ AMD 6
+			+ RTX 3060/3070Ti
+			+ 90Wh
+			+ IPS 1080p 360Hz
+	Flow
+		X16 2022 https://rog.asus.com/laptops/rog-flow/rog-flow-x16-2022-series/spec
+			+ AMD 6
+			+ RTX 3050Ti/3060/3070Ti
+			+ 90Wh
+			+ MLED 1600p 165Hz
+framework
+hp
+	zbook studio g7
+	dev one
