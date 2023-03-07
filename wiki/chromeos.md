@@ -9,6 +9,7 @@ tags:
 # ChromeOS
 [Repository](https://chromium.googlesource.com/codesearch/chromium/src/+/refs/heads/master-original/chromeos/)
 
+[ARC](/wiki/arc.md)
 
 Note: Chrome OS devices' keys between `ESC` and `LOCK` are just function keys with different legends.
 
@@ -24,7 +25,7 @@ Create a recovery media in advance if this is the only device you have access to
 
 If you want to install to the internal drive, use `cgpt` to shrink the state partition, create partitions and create filesystems inside them. To boot other operating systems, run `crossystem dev_boot_altfw=1` as root. To boot from a USB device, also run `crossystem dev_boot_usb=1` as root. Depending on the device, you may have to flash your firmware using [MrChromebox's Firmware Utility](https://mrchromebox.tech/#fwscript). Be sure not to touch the partition table or Chrome OS partitions of the internal drive from ouside Chrome OS as that may render Chrome OS unbootable due to security checks; even with rootfs verification disabled.
 
-# See Also:
+## See Also:
 
 [Workaround for battery discharge in dev-mode](https://dev.chromium.org/chromium-os/developer-information-for-chrome-os-devices/workaround-for-battery-discharge-in-dev-mode#TOC-Modify-the-recovery-image-so-we-can-mount-it)
 
@@ -39,7 +40,7 @@ If you want to install to the internal drive, use `cgpt` to shrink the state par
 [Developer Information for Chrome OS Devices](https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/)
 
 ## Usage
-### Crostini
+## Crostini
 [Crostini](https://chromeos.dev/en/linux/setup)
 
 [Flatpak](https://flatpak.org/setup/Chrome%20OS/)

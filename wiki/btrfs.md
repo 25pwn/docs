@@ -10,5 +10,8 @@ List subvolumes under path
 sudo btrfs subvolume list "${DIR}"
 ```
 ```
-btrfs property set -ts "${DIR}" ro false
+sudo btrfs property set -ts "${DIR}" ro false
+```
+```
+sudo btrfs check --force "${DEV}"
 ```

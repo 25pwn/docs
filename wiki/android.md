@@ -9,3 +9,6 @@ tags:
 [Termux](termux.md)
 
 [Waydroid](https://github.com/waydroid/waydroid)
+
+[Raccoon](https://github.com/onyxbits/Raccoon/)
+## Internals
