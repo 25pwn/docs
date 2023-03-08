@@ -3,7 +3,11 @@ tags: brand
 ---
 # Apple
 ## Internals
+[Apple Platform Security](https://support.apple.com/guide/security/welcome/web)
+
 [Hardware security overview](https://support.apple.com/guide/security/hardware-security-overview-secf020d1074/1/web/1)
+
+[Hardware microphone disconnect](https://support.apple.com/guide/security/hardware-microphone-disconnect-secbbd20b00b/web)
 
 [MOXiI](http://newosxbook.com/1stEdIsFree.html)
 
