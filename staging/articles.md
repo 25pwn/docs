@@ -8,3 +8,5 @@ AVX frequency scaling
 
 
 https://blog.dijit.sh//that-time-my-manager-spend-1m-on-a-backup-server: data databases ubisoft cloud backup
+
+[AI is making it easier to create more noise, when all I want is good search](https://rachsmith.com/i-want-good-search/)

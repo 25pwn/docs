@@ -22,3 +22,4 @@
 | [random](https://xerub.github.io/) | xerub's blog, focused on Apple security |
 | [Phrack Magazine](http://phrack.org/issues/70/1.html) | focused on security |
 | [Reverse Engineering](https://reverse.put.as/) | osxreverser's blog, focused on reverse engineering |
+| [Julien Jorge's Personal Website](https://julien.jorge.st/posts/en/) | Programming, C++, and random stuff |
