@@ -1,7 +1,12 @@
 ## Useful resources
 [Repology](https://repology.org): Information about software repositories
 
+
+## News
+
 [Hacker News](https://news.ycombinator.com/): News on STEM, focus on IT
+
+[Search Hacker News](https://hn.algolia.com/): Hacker news search
 
 [Ground News](https://ground.news/): News with bias coverage
 
@@ -81,17 +86,28 @@
 
 [QiFi](https://qifi.org/): pure JS WiFi QR Code Generator
 
+
+
+[DeepL Translator](https://www.deepl.com/en/translator): AI translation
+
+[Firefox Profilemaker](https://ffprofile.com/): Create Firefox profiles
+
+[Proton Mail](https://proton.me/mail): Secure email that protects your privacy
+
+
 [](https://www.kasmweb.com/community-edition)
 
-[](https://www.deepl.com/en/translator)
+
+
+
 [](https://discord.com/app)
-[](https://ffprofile.com/)
+
 [](https://play-cs.com/en/servers)
 [](https://archive.org/web/)
 
 [](https://www.openingtree.com/)
 
-[](https://mail.proton.me/)
+
 
 [](https://en.wikiversity.org/wiki/Wikiversity:Main_Page)
 [](https://www.wikiwand.com/en/)
