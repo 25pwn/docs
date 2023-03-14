@@ -16,4 +16,6 @@ tags: drm cdm
 
 [#Raspberry Pi: Amazon Prime, Netflix, Disney, Spotify - a DRM official solution](https://lemariva.com/blog/2021/04/raspberry-pi-amazon-prime-netflix-disney-spotify-drm-solution)
 
+[The Quest for Netflix on Asahi Linux](https://www.da.vidbuchanan.co.uk/blog/netflix-on-asahi.html)
+
 [glibc-widevine](https://aur.archlinux.org/packages/glibc-widevine)
