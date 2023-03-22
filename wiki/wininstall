@@ -15,8 +15,6 @@ mountvol Z:\ PATH
 
 # win11 requires stpm and ovmf-secboot
 
-
-
 drvload E:\NetKVM\w11\amd64
 drvload E:\viofs\w11\amd64
 drvload E:\viogpudo\w11\amd64
