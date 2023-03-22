@@ -96,3 +96,5 @@ reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation
 [ReactOS](https://reactos.org/)
 
 Windows modern standby
+
+https://hacks.mozilla.org/2022/11/improving-firefox-stability-with-this-one-weird-trick/

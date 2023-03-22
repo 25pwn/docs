@@ -17,9 +17,9 @@ tags: programming-language
 
 [The Rust Programming Language](https://doc.rust-lang.org/stable/book/)
 ## Crates
-[clap](https://docs.rs/clap/latest/clap/): Command Line Argument Parser for Rust
+[clap](https://docs.rs/clap/latest/clap/)
 
-[argh]()
+[argh](https://docs.rs/argh/latest/argh/)
 
 ## etc
 [Why Discord is switching from Go to Rust](https://discord.com/blog/why-discord-is-switching-from-go-to-rust)
