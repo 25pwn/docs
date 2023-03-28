@@ -95,6 +95,12 @@
 [Proton Mail](https://proton.me/mail): Secure email that protects your privacy
 
 
+[VirusTotal](https://www.virustotal.com/gui/home/upload): Malware scanner
+
+[Intezer Analyze](https://analyze.intezer.com/scan): Malware scanner
+
+[Kaspersky TIP](https://opentip.kaspersky.com/): Malware scanner
+
 [](https://www.kasmweb.com/community-edition)
 
 
